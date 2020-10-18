@@ -34,7 +34,7 @@
           "type": "module"
         }
     ],
-	"__url": "https://gitlab.com/riccisi/foundryvtt-dice-so-nice",
-	"__manifest": "https://gitlab.com/riccisi/foundryvtt-dice-so-nice/raw/master/module/module.json",
+	"url": "https://github.com/K-Dark/foundryvtt-dice-so-fl",
+	"manifest": "https://raw.githubusercontent.com/K-Dark/foundryvtt-dice-so-fl/main/module.json",
 	"__download": "https://gitlab.com/riccisi/foundryvtt-dice-so-nice/-/jobs/artifacts/2.0.4/raw/dice-so-nice.zip?job=build"
 }
