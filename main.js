@@ -1,7 +1,6 @@
 import { DicePresetBuilder } from './DicePresetBuilder.js';
-import { FBLDieBase } from "./DieExtensions.js";
-import { FBLDieSkill } from "./DieExtensions.js";
-import { FBLDieGear } from "./DieExtensions.js";
+import { FBLDieBase, FBLDieSkill, FBLDieGear } from "./DieExtensions.js";
+import { FBLDieConsumable6, FBLDieConsumable8, FBLDieConsumable10, FBLDieConsumable12 } from "./DieExtensions.js";
 
 /**
  * Registers the exposed settings for the various 3D dice options.
@@ -15,6 +14,10 @@ Hooks.once('init', () => {
         CONFIG.Dice.terms["b"] = FBLDieBase;
         CONFIG.Dice.terms["s"] = FBLDieSkill;
         CONFIG.Dice.terms["g"] = FBLDieGear;
+        CONFIG.Dice.terms["u"] = FBLDieConsumable6;
+        CONFIG.Dice.terms["i"] = FBLDieConsumable8;
+        CONFIG.Dice.terms["o"] = FBLDieConsumable10;
+        CONFIG.Dice.terms["p"] = FBLDieConsumable12;
     }
 });
 
