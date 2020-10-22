@@ -1,17 +1,28 @@
-import {DicePresetBuilder} from './DicePresetBuilder.js';
+import { DicePresetBuilder } from './DicePresetBuilder.js';
+import { FBLDieBase } from "./DieExtensions.js";
+import { FBLDieSkill } from "./DieExtensions.js";
+import { FBLDieGear } from "./DieExtensions.js";
 
 /**
  * Registers the exposed settings for the various 3D dice options.
  */
 Hooks.once('init', () => {
     console.log("World is Init");
+    
+    CONFIG.is07x = Number(`${game.data.version.split(".")[0]}.${game.data.version.split(".")[1]}`) > 0.6;
+
+    if (CONFIG.is07x) {
+        CONFIG.Dice.terms["b"] = FBLDieBase;
+        CONFIG.Dice.terms["s"] = FBLDieSkill;
+        CONFIG.Dice.terms["g"] = FBLDieGear;
+    }
 });
 
 /**
  * Foundry is ready, let's create a new Dice3D!
  */
-Hooks.once('ready', () => {
-    console.log("World is Ready");
+Hooks.once('diceSoNiceReady', (dice3d) => {
+    DicePresetBuilder.BuildPresets(dice3d);
 });
 
 /**
